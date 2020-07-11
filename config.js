@@ -38,17 +38,24 @@ const config = {
   },
   sidebar: {
     forcedNavOrder: [
-      '/introduction', // add trailing slash if enabled above
-      '/codeblock',
+      '/', // add trailing slash if enabled above
+      '/algorithm-analysis',
+      '/adts-vs-structures',
+      '/adts',
+      '/structures',
+      '/algorithms',
+      '/codeblock'
     ],
     collapsedNav: [
-      '/codeblock', // add trailing slash if enabled above
+      '/adts',
+      '/structures',
+      '/algorithms',
+      '/codeblock',
     ],
-    links: [{ text: 'Hasura', link: 'https://hasura.io' }],
+    links: [],
     frontline: false,
-    ignoreIndex: true,
-    title:
-      "<a href='https://hasura.io/learn/'>graphql </a><div class='greenCircle'></div><a href='https://hasura.io/learn/graphql/react/introduction/'>react</a>",
+    ignoreIndex: false,
+    title: "Data Structures & Algorithms",
   },
   siteMetadata: {
     title: 'Gatsby Gitbook Boilerplate | Hasura',
