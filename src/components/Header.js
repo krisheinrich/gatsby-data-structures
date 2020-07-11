@@ -1,15 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { StaticQuery, graphql } from 'gatsby';
-import GitHubButton from 'react-github-btn';
 import Link from './link';
 import Loadable from 'react-loadable';
 
 import config from '../../config.js';
 import LoadingProvider from './mdxComponents/loading';
 import { DarkModeSwitch } from './DarkModeSwitch';
-
-const help = require('./images/help.svg');
 
 const isSearchEnabled = config.header.search && config.header.search.enabled ? true : false;
 
@@ -53,6 +50,25 @@ const StyledBgDiv = styled('div')`
   }
 `;
 
+const NavBarDefault = styled('nav')`
+  background-color: ${props => (props.isDarkThemeActive ? '#445590' : '#8899e2')};
+  border-radius: 0;
+  border-top: 0;
+  margin-bottom: 0;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.4);
+  -webkit-box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.4);
+  -moz-box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.8);
+  -o-box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.4);
+  z-index: 1;
+  padding: 15px;
+  position: relative;
+  height: 80px;
+`;
+
 const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
   <StaticQuery
     query={graphql`
@@ -76,7 +92,7 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
       }
     `}
     render={data => {
-      const logoImg = require('./images/logo.svg');
+      const logoImg = require('./images/node-branches-icon.png');
 
       const twitter = require('./images/twitter.svg');
 
@@ -94,7 +110,7 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
 
       return (
         <div className={'navBarWrapper'}>
-          <nav className={'navBarDefault'}>
+          <NavBarDefault isDarkThemeActive={isDarkThemeActive}>
             <div className={'navBarHeader'}>
               <Link to={finalLogoLink} className={'navBarBrand'}>
                 <img
@@ -124,72 +140,13 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
                 <Sidebar location={location} />
                 <hr />
               </div>
-              <ul className={'navBarUL navBarNav navBarULRight'}>
-                {headerLinks.map((link, key) => {
-                  if (link.link !== '' && link.text !== '') {
-                    return (
-                      <li key={key}>
-                        <a
-                          className="sidebarLink"
-                          href={link.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          dangerouslySetInnerHTML={{ __html: link.text }}
-                        />
-                      </li>
-                    );
-                  }
-                })}
-                {helpUrl !== '' ? (
-                  <li>
-                    <a href={helpUrl}>
-                      <img src={help} alt={'Help icon'} />
-                    </a>
-                  </li>
-                ) : null}
 
-                {tweetText !== '' ? (
-                  <li>
-                    <a
-                      href={'https://twitter.com/intent/tweet?&text=' + tweetText}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img className={'shareIcon'} src={twitter} alt={'Twitter'} />
-                    </a>
-                  </li>
-                ) : null}
-                {tweetText !== '' || githubUrl !== '' ? (
-                  <li className="divider hiddenMobile"></li>
-                ) : null}
-                {config.header.social ? (
-                  <li className={'hiddenMobile'}>
-                    <ul
-                      className="socialWrapper"
-                      dangerouslySetInnerHTML={{ __html: config.header.social }}
-                    ></ul>
-                  </li>
-                ) : null}
-                {githubUrl !== '' ? (
-                  <li className={'githubBtn'}>
-                    <GitHubButton
-                      href={githubUrl}
-                      data-show-count="true"
-                      aria-label="Star on GitHub"
-                    >
-                      Star
-                    </GitHubButton>
-                  </li>
-                ) : null}
-                <li>
-                  <DarkModeSwitch
-                    isDarkThemeActive={isDarkThemeActive}
-                    toggleActiveTheme={toggleActiveTheme}
-                  />
-                </li>
-              </ul>
+              <DarkModeSwitch
+                isDarkThemeActive={isDarkThemeActive}
+                toggleActiveTheme={toggleActiveTheme}
+              />
             </div>
-          </nav>
+          </NavBarDefault>
           <StyledBgDiv isDarkThemeActive={isDarkThemeActive}>
             <div className={'navBarDefault removePadd'}>
               <span

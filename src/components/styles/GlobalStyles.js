@@ -223,11 +223,10 @@ export const baseStyles = injectGlobal`
   }
   .headerTitle {
     height: auto;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
     font-weight: 300;
     color: #fff !important;
-    margin-top: 16px;
     text-transform: uppercase;
   }
   .headerTitle a {
@@ -286,8 +285,8 @@ export const baseStyles = injectGlobal`
   }
 
   .navBarBrand img {
-    width: 120px;
-    margin-right: 6px;
+    max-height: 50px;
+    margin-right: 20px;
     display: inline-block;
   }
   .navBarUL li {
