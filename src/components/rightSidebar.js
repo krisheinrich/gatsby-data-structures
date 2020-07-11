@@ -36,16 +36,29 @@ const SidebarLayout = ({ location }) => (
               config.gatsby.pathPrefix + item.node.fields.slug === location.pathname
             ) {
               if (item.node.tableOfContents.items) {
-                innerItems = item.node.tableOfContents.items.map((innerItem, index) => {
-                  const itemId = innerItem.title
-                    ? innerItem.title.replace(/\s+/g, '').toLowerCase()
+                innerItems = [];
+
+                const pushItem = (item, index, level) => {
+                  const itemId = item.title
+                    ? item.title.replace(/\s+/g, '').toLowerCase()
                     : '#';
 
-                  return (
-                    <ListItem key={index} to={`#${itemId}`} level={1}>
-                      {innerItem.title}
+                  innerItems.push(
+                    <ListItem key={`${level}-${index}`} to={`#${itemId}`} level={level}>
+                      {item.title}
                     </ListItem>
                   );
+                };
+
+                let depth = 0;
+
+                item.node.tableOfContents.items.forEach((innerItem, index) => {
+                  pushItem(innerItem, index, depth);
+                  if (innerItem.items) {
+                    depth++;
+                    innerItem.items.forEach((child, i) => pushItem(child, i, depth));
+                    depth--;
+                  }
                 });
               }
             }
