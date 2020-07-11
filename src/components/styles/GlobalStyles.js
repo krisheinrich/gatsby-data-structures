@@ -685,7 +685,7 @@ export const baseStyles = injectGlobal`
   }
 
   .heading3 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 1.5;
     margin-bottom: 16px;
