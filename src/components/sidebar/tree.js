@@ -115,7 +115,7 @@ const calculateTreeData = edges => {
   }, tree);
 };
 
-const Tree = ({ edges }) => {
+const Tree = ({ edges, location }) => {
   let [treeData] = useState(() => {
     return calculateTreeData(edges);
   });
@@ -123,20 +123,31 @@ const Tree = ({ edges }) => {
   const defaultCollapsed = {};
 
   treeData.items.forEach(item => {
-    if (config.sidebar.collapsedNav && config.sidebar.collapsedNav.includes(item.url)) {
+    const isCollapsed = config.sidebar.collapsedNav && config.sidebar.collapsedNav.includes(item.url);
+    if (isCollapsed) {
       defaultCollapsed[item.url] = true;
     } else {
       defaultCollapsed[item.url] = false;
     }
   });
+
   const [collapsed, setCollapsed] = useState(defaultCollapsed);
 
   const toggle = url => {
-    setCollapsed({
-      ...collapsed,
-      [url]: !collapsed[url],
-    });
+    setCollapsed(prevCollapsed => ({
+      ...prevCollapsed,
+      [url]: !prevCollapsed[url],
+    }));
   };
+
+  // expand the parent nav section of the current route, collapsing all others
+  for (const url in collapsed) {
+    const subroute = location.pathname.split('/')[1];
+    const isActive = url.length > 1 && subroute === url.slice(1);
+    if ((isActive && collapsed[url]) || (!isActive && !collapsed[url])) {
+      toggle(url);
+    }
+  }
 
   return (
     <TreeNode
