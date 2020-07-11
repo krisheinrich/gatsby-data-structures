@@ -1,0 +1,46 @@
+---
+title: "Array"
+metaTitle: "Data Structures / Array"
+metaDescription: "The Array Data Structure"
+---
+
+## Introduction
+
+An **Array** is an ordered collection of items stored in a _contiguous block of memory_ and accessed via an _index_, which acts as an offset from the base address of the array.
+
+In many languages, arrays are **static** by default, meaning their size must be specified at the point the array is declared and cannot be resized. Instead, when the array needs to extend beyond its original bounds, a new block of memory with a bigger size must be allocated and each of the elements in the original array copied into this new larger array. Many languages also provide a built-in data type that implements a **dynamic** array, which the programmer need not worry about resizing manually; any resizing that does occur is hidden from the user.
+
+
+## When to Use
+
+- Note: specific method names are language-depenedent.
+
+- Lookup Tables
+
+
+## Associated Abstract Data Types
+
+- List
+- Heap
+
+## Runtime complexity of Array Oprations
+
+- lookup: O(1)
+- add to back: O(1)
+- add to front: O(n)
+- remove from back (pop): O(1)
+- remove from front: O(n)
+
+## Examples
+
+```javascript
+const data = [];
+```
+
+## Read More
+
+[Wikipedia - Array Data Structure](https://en.wikipedia.org/wiki/Array_data_structure)
+
+## Practice Challenges
+
+[LeetCode]()
