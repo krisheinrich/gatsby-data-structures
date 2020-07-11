@@ -1,5 +1,11 @@
 import { injectGlobal } from 'emotion';
 
+// COLORS
+const LIGHT_GRAY = '#c2c2c2';
+const DARK_BLUE = '#001934';
+const LIGHT_BLUE = '#bbbbf2';
+
+
 export const baseStyles = injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap');
@@ -11,16 +17,16 @@ export const baseStyles = injectGlobal`
   }
   ::-webkit-input-placeholder {
     /* Edge */
-    color: #c2c2c2;
+    color: ${LIGHT_GRAY};
   }
 
   :-ms-input-placeholder {
     /* Internet Explorer */
-    color: #c2c2c2;
+    color: ${LIGHT_GRAY};
   }
 
   ::placeholder {
-    color: #c2c2c2;
+    color: ${LIGHT_GRAY};
   }
   html,
   body {
@@ -76,7 +82,7 @@ export const baseStyles = injectGlobal`
     border-radius: 1px;
     margin: 0 auto;
     margin-top: 4px;
-    background-color: #001934;
+    background-color: ${DARK_BLUE};
   }
   .navBarToggle .iconBar:first-child {
     margin-top: 0px;
@@ -160,7 +166,7 @@ export const baseStyles = injectGlobal`
     width: 100%;
     background-color: rgba(28,211,198,.12) !important;
     border-width: 0 !important;
-    color: #C2C2C2;
+    color: ${LIGHT_GRAY};
     padding: 10px;
     border-radius: 5px;
     color: #fff;
@@ -256,7 +262,7 @@ export const baseStyles = injectGlobal`
     padding: 0 !important;
   }
   .navBarDefault {
-    background-color: #001934;
+    background-color: ${LIGHT_BLUE};
     border-radius: 0;
     border-top: 0;
     margin-bottom: 0;
@@ -373,7 +379,7 @@ export const baseStyles = injectGlobal`
     font-family: 'Poppins';
     font-size: 18px;
     font-weight: 600;
-    color: #001934;
+    color: ${DARK_BLUE};
     display: flex;
     align-items: center;
   }
@@ -383,7 +389,7 @@ export const baseStyles = injectGlobal`
   }
 
   .sidebarTitle a {
-    color: #001934;
+    color: ${DARK_BLUE};
   }
 
   .greenCircle {
@@ -733,13 +739,13 @@ export const baseStyles = injectGlobal`
 
   @media (max-width: 767px) {
     .formElement svg path {
-      fill: #001934;
+      fill: ${DARK_BLUE};
     }
     .visibleMobileView {
       display: block !important;
     }
     .searchInput {
-      color: #001934;
+      color: ${DARK_BLUE};
     }
     .socialWrapper {
       position: absolute;
