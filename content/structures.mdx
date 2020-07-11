@@ -15,15 +15,16 @@ See [ADTs vs Data Structures]() for more information.
 
 ## List of Data Structures
 
+### Simple (Non-Linked) Data Structures
 - <GatsbyLink to='/structures/array'>Array</GatsbyLink>
-- <GatsbyLink to='/structures/hash-table'>Hash Table / Hash Map</GatsbyLink>
 - <GatsbyLink to='/structures/struct'>Record / Struct</GatsbyLink>
+- <GatsbyLink to='/structures/hash-table'>Hash Table / Hash Map</GatsbyLink>*
 
-Linked Data Structures:
+*Note: _While hash tables do not require linking in theory, in practice a linked data structure is often used to store data that has undergone a **hash collision**_.
+
+### Linked Data Structures
 - <GatsbyLink to='/structures/linked-list'>Linked List</GatsbyLink>
-- <GatsbyLink to='/structures/heap'>Heap</GatsbyLink>
 - <GatsbyLink to='/structures/union-find'>Union-Find / Disjoint Set</GatsbyLink>
-
 - Search Trees:
     - <GatsbyLink to='/structures/bst'>BST</GatsbyLink>
     - Self balancing BSTs:
@@ -33,7 +34,9 @@ Linked Data Structures:
         - [B-Tree]()
     - <GatsbyLink to='/structures/trie'>Trie</GatsbyLink>
 
-- Graph Representation:
+### Implicitly Linked Data Structures
+- <GatsbyLink to='/structures/heap'>Heap</GatsbyLink>
+- Graph Representations:
     - [Adjacency List]()
     - [Adjacency Matrix]()
     - [Incidence Matrix]()

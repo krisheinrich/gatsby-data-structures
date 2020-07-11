@@ -12,7 +12,7 @@ An **algorithm** is an explicitly-defined procedure (set of computer instruction
 
 Algorithms may be described in pseudo-code or in any actual computer language capable of performing the instructions included in the algorithm.
 
-Algorithms often make use of a generalizable approach to problem solving, such as _Divide and Conquer_ or _backtracking_. These general approaches are known as **algorithmic paradigms** and can be use to solve problems in many other domains, not just compuetr science.
+Algorithms often make use of a generalizable approach to problem solving, such as _Divide and Conquer_ or _backtracking_. These general approaches are known as **algorithmic paradigms** and can be use to solve problems in many other domains, not just computer science.
 
 Algorithms may be loosely classified along the lines of the data structure or abstract data type they correspond to.
 
