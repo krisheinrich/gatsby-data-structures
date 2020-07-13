@@ -1,0 +1,49 @@
+---
+title: "Queue / Deque"
+metaTitle: "ADTs / Queue"
+metaDescription: "The Queue Abstract Data Type"
+---
+
+import { Link as GatsbyLink } from 'gatsby';
+
+## Introduction
+
+A **Queue** is an ordered set of items which allows _FIFO_ (first in, first out) retrival. Conceptually, queues have a _front_ and a _back_ (or _end_), much like a real-life queue (i.e. line) of people waiting. Indeed, queues are often used in scenarios where it is desirable to process items in the order in which they arrived (e.g. network requests).
+
+A **Deque** (short for **double-ended queue**) is an enhanced queue that allows retrieval at either end, similar to a hybrid of a traditional queue and a stack.
+
+
+## Interface
+
+### Queue
+
+| Operation        | Description                                         |
+| ---------------- | --------------------------------------------------- |
+| `create()`       | Create a new queue                                  |
+| `enqueue(value)` | Store a new value at the end of the queue           |
+| `peek()`         | Check the value at the front of the queue           |
+| `dequeue()`      | Return the front value and remove it from the queue |
+
+### Deque
+
+| Operation           | Description                                         |
+| ------------------- | --------------------------------------------------- |
+| `create()`          | Create a new queue                                  |
+| `push_front(value)` | Store a new value at the front of the queue         |
+| `push_back(value)`  | Store a new value at the end of the queue           |
+| `peek_front()`      | Check the value at the front of the queue           |
+| `peek_back()`       | Check the value at the back of the queue            |
+| `pop_front()`       | Return the back value and remove it from the queue  |
+| `pop_back()`        | Return the front value and remove it from the queue |
+
+
+## Implementations
+
+- <GatsbyLink to='/structures/array'>Array</GatsbyLink>
+- <GatsbyLink to='/structures/linked-list'>Linked List</GatsbyLink>
+
+
+## Read More
+
+- [Wikipedia - Queue (ADT)](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
+- [Wikipedia - Double-Ended Queue](https://en.wikipedia.org/wiki/Double-ended_queue)

@@ -1,0 +1,35 @@
+---
+title: "List"
+metaTitle: "ADTs / List"
+metaDescription: "The List Abstract Data Type"
+---
+
+import { Link as GatsbyLink } from 'gatsby';
+
+## Introduction
+
+A **List** is an ordered collection of items.
+
+Elements are accessible via their positional **index** (typically 0-based).
+
+
+## Interface
+
+| Operation           | Description                      |
+| ------------------- | -------------------------------- |
+| `create()`          | Create a new List                |
+| `get(i)`            | Get the item at position _i_     |
+| `store(i, value)`   | Store a new item at position _i_ |
+| `remove(i)`         | Delete the item at position _i_  |
+
+
+## Implementations
+
+- <GatsbyLink to='/structures/array'>Array</GatsbyLink>
+- <GatsbyLink to='/structures/linked-list'>Linked List</GatsbyLink>
+
+
+## Read More
+
+- [Wikipedia - List (ADT)](https://en.wikipedia.org/wiki/List_(abstract_data_type))
+- [University of Wisconson - Lists](http://pages.cs.wisc.edu/~hasti/cs367-1/readings/Lists/)
