@@ -26,8 +26,7 @@ const config = {
   sidebar: {
     forcedNavOrder: [
       '/', // add trailing slash if enabled above
-      '/algorithm-analysis',
-      '/adts-vs-structures',
+      '/overview',
       '/adts',
       '/structures',
       '/algorithms',
