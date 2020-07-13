@@ -575,6 +575,7 @@ export const baseStyles = injectGlobal`
   /* tables.css */
   table {
     padding: 0;
+    border-collapse: collapse;
   }
 
   table tr {
