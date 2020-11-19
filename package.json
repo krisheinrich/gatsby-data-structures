@@ -38,6 +38,7 @@
     "gatsby-transformer-remark": "^2.6.42",
     "graphql": "^14.5.8",
     "is-absolute-url": "^3.0.3",
+    "lodash-es": "^4.17.15",
     "lodash.flatten": "^4.4.0",
     "lodash.startcase": "^4.4.0",
     "react": "^16.12.0",

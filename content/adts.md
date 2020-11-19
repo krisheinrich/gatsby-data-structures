@@ -21,7 +21,7 @@ See <GatsbyLink to='/overview/adts-vs-structures'>ADTs vs Data Structures</Gatsb
 
 **Linear collections** are abstract data types which allow _sequential_ access to their elements. The exact ordering of the sequence depends on the ADT, as does the ability to access the sequence in reverse order. It is often desirable to retrieve an item based on its assigned _sequential ordering_ (**List**). In other cases, it may be preferable to access an element that was _added first_ (**Queue**) or one that was _added most recently_ (**Stack**), process it, and remove it from the collection. In some scenarios, a program might instead require access to an element based on some notion of _priority_ or _level of importance_ that is assigned to each item (**Priority Queue**).
 
-Queues that allow processing from either end are called **double-ended queues** or **deques**, while priority queues with this property are called **double-ended priority queues** or **DEPQs**.
+Queues that allow access to elements from either end are called **double-ended queues** or **deques**, while priority queues with this property are called **double-ended priority queues** or **DEPQs**.
 
 - <GatsbyLink to='/adts/1-list'>List</GatsbyLink>
 - <GatsbyLink to='/adts/2-stack'>Stack</GatsbyLink>

@@ -1,0 +1,89 @@
+---
+title: "Algorithm Analysis"
+metaTitle: "Algorithm Analysis"
+metaDescription: "Algorithm Analysis"
+---
+
+import { Link as GatsbyLink } from 'gatsby';
+
+## What is Algorithm Analysis?
+
+Computers today are incredibly powerful. Modern CPUs can perform on the order of ~1 billion operations per second. Why should we care about how "fast" or "efficient" an algorithm is?
+
+The time it takes an <GatsbyLink to='/algorithms'>algorithm</GatsbyLink> to finish execution is directly proportional to the amount of work, i.e. the _number of operations_, that the procedure needs to perform. This number is typically a function of the size of the data set the algorithm is operating on, although sometimes the number of operations is fixed and independent of the amount of data. For example, some algorithms require that every item in a data set is processed, while others can complete after processing only a small portion of the set, or may instead require that every item is visited multiple times.
+
+The CPU is not the only hardware resource utilized during the execution of an algorithm. The input data an algorithm operates on must be stored in physical memory (i.e. RAM), and likewise for any data generated during its execution. Different algorithms may utilize widely different amounts of RAM, just as they may perform widely different numbers of operations. Thus, in addition to their time efficiency, algorithms can be profiled in terms of how much "space" in memory they require.
+
+**Algorithm analysis** is a formal way of describing algorithm performance, from the standpoint of both the time (number of operations) and space (amount of memory) required by an algorithm.
+
+So, why _should_ we care about algorithmic efficiency? The short answer is this: the data sets we  need to work with in the real world are often so huge that even our most sophisticated hardware simply cannot cope. As mentioned in the <GatsbyLink to='/'>site introduction</GatsbyLink>, the difference between a good algorithm and a bad algorithm can literally mean accomplishing a task in _under one second_ vs. in _thousands of years_. Algorithm analysis allows us to objectively determine how good or bad one algorithm is at some task compared to others.
+
+## Quantifying Algorithm Performance
+
+In order to quantify how efficient an algorithm is, computer scientists use **Big O** notation. A Big O value identifies the type or family of function that, when applied to the size of a (sufficiently large) data set, estimates a _bound_ on the number of operations&mdash;and by extension, the time&mdash;or the amount of space in memory, required for an algorithm to successfully complete its task. As the number of elements in a data set increases, you can expect the time/space cost to grow in a way similar to the _asymptotic bounding_ function.
+
+This measure of the "time/space cost" is referred to as the algorithm's (**asymptotic**) **computational complexity**&mdash;more specifically, (**run**)**time complexity** or **space complexity**.
+
+The name "Big O notation" refers to how the function is expressed in writing: O(n), for example. The "O" stands for "order": the "order of a function" refers to a function's growth rate. 
+
+The order/Big O is a useful metric to abstractly assess algorithmic efficiency, since the actual performance depends on many external/hardware-dependent factors, such as the clock speed of the processor performing the operations, the supported instruction set, the word size of the processor/OS, the amount of available cache, the optimizations performed by the compiler, and so on. While the exact time/space requirement may be very difficult to determine, the order indicates the general trend of how resource consumption scales as the input size grows.  
+
+Big O is actually one of several metrics used to bound an algorithm's performance, though it is the most often used in practice.
+
+### Big O, Big Omega, and Big Theta
+- The O(...) or "Big O" function is an _upper bound_ estimate of an algorithm's complexity
+    - A time complexity of O(_n_<sup>2</sup>) indicates that, for a data set with _n_ elements, the number of operations an algorithm performs is roughly proportional to _n_<sup>2</sup>
+    - Strictly speaking, "_f_ is Big O of _g_" means that for sufficiently large values of _n_ (i.e. _n_ &ge; some value _N_), _f_(_n_) &le; _c_&sdot;_g_(_n_), where _c_ refers to some constant coefficient
+- The &Omega;(...) or "Big Omega" is a _lower bound_ estimate of complexity
+- The &Theta;(...) or "Big Theta" is an _asymptotically tight_ estimate of complexity
+    - It is used when the upper and lower bounds coincide, i.e. O(...) = &Omega;(...)
+
+There is also little o...
+
+**Note**: People often use Big O/O(...) when they mean Big Theta/&Theta;(...), which gives a more precise description. For example, since O(...) is defined as an upper bound, an algorithm with &Theta;(_n_) complexity could technically be describe as O(_n_<sup>2</sup>), since _n_<sup>2</sup> is a higher bound than _n_. However, most people would say that this description is not correct in the sense that the complexity is **not** &Theta;(_n_<sup>2</sup>).
+
+### Time-Complexity
+- What is measures
+- How to Calculate
+
+### Space Complexity
+- What is measures
+- How to Calculate
+
+### Best Case, Worst Case, Expected Case?
+
+Even for a fixed data size _n_, the actual performance of an algorithm has some variability. For instance, if a nearly-sorted array is provided to a sorting algorithm, it is possible the algorithm would finish much more quickly than if the same input array were ordered totally randomly. For this reason, it is useful to look closer and consider the bounds for the best case, worst case, and average case for an algorithm as well.
+
+**Note**: Typically in algorithm analysis, unless otherwise stated it is assumed that the _upper bound_ on algorithm's performance in the _worst case_ is being considered.
+
+## Common Orders of Growth
+
+ The following complexities are listed from best to worst (i.e. fastest to slowest, smallest to largest):
+
+
+| Order              | Name                  | Description              |
+| ------------------ | --------------------- | ----------------------- |
+| O(1)               | **constant**     | Time/space is fixed with respect to the size of the input data set <br/><br/>Examples: lookup in a map with key, lookup in an array with index |
+| O(log _n_)         | **logarithmic**  | Time/space is logarithmic (base 2) with respect to the input size <br/><br/>Examples: binary search of a BST |
+| O(_n_)             | **linear**       | Time/space is directly proportional to the input size <br/><br/>Examples: linear scan of an array/string |
+| <div class="nowrap">O(_n_ log _n_)</div>     | **linearithmic** | (Portmanteau of _linear_ and _logarithmic_) <br/>Time/space is proportional to the product of the input size and its logarithm (base 2) <br/><br/>Examples: merge sort, heapsort |
+| O(_n_<sup>2</sup>) | **quadratic**    | Time/space is proportional to the _square_ of the input size <br/><br/>Examples: nested iteration; bubble, selection, and insertion sort |
+| O(2<sup>_n_</sup>) | **exponential**  | Time/space grows exponentially (base 2) with respect to the input size <br/><br/>Examples: compute the power set of a set |
+| O(_n_!) | **factorial**  | Time/space is proportional to the factorial of the input size <br/><br/>Examples: compute all permutations of a set |
+
+## Tips for Describing Asymptotic Complexity
+
+- Drop constant coefficients: O(5_n_) &rarr; O(_n_)
+    - Constant multiples commonly arise with different hardware, system architectures, compiler optimizations, etc.
+    - It is better to abstract away these difference when comparing algorithms
+    - We really only care about what happens as _n_ gets really big
+- When adding, drop the smaller term: O(_n_ + log _n_) &rarr; O(_n_)
+    - For determining upper bounds, only the dominant term matters for very large value of _n_
+
+
+## Amortized Time Complexity
+
+
+## Read more
+
+- The [Big-O Cheat Sheet](https://www.bigocheatsheet.com/) provides a nicely summary of the best/average/worst case complexities (time and space) for the main operations on all of the most common data structures. It also compares best/average/worst case complexities for various array sorting algorithms.

@@ -14,14 +14,17 @@ This page lists many of the most commonly used algorithms performed on <GatsbyLi
 ## List of Algorithms By Type
 
 - Graph Traversal
-  - <GatsbyLink to='/algorithms/bfs'>Breadth-First Search</GatsbyLink>
-  - <GatsbyLink to='/algorithms/dfs'>Depth-First Search</GatsbyLink>
+    - <GatsbyLink to='/algorithms/bfs'>Breadth-First Search</GatsbyLink>
+    - <GatsbyLink to='/algorithms/dfs'>Depth-First Search</GatsbyLink>
 
-- Finding a Minimum Spanning Tree
-  - <GatsbyLink to='/algorithms/prim'>Prim's Algorithm</GatsbyLink>
-  - <GatsbyLink to='/algorithms/kruskal'>Kruskal's Algorithm</GatsbyLink>
+- Minimum Spanning Tree
+    - <GatsbyLink to='/algorithms/prim'>Prim's Algorithm</GatsbyLink>
+    - <GatsbyLink to='/algorithms/kruskal'>Kruskal's Algorithm</GatsbyLink>
 
 - Topological Sort
+
+- Travelling Salesman Problem (TSP)
+    - Nearest Neighbor Algorithm
 
 
 ## Read More

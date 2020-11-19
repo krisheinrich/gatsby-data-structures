@@ -8,20 +8,21 @@ import { Link as GatsbyLink } from 'gatsby';
 
 ## Introduction
 
-A **Priority Queue** is an ordered set of items which allows retrival based on assigned priority. Elements with higher priority are typically retrieved first.
+A **Priority Queue** is an ordered set of items which allows retrival based on assigned priority. Elements with higher priority are retrieved first. Unlike a queue or stack, the order in which elements in a priority queue are accessed is not determined by the order in which they were added.
 
 A **Double-Ended Priority Queue** (**DEPQ**) is an enhanced priority queue that allows efficient retrieval of either the max- or min-priority element.
 
 
-## Interface - TODO
+## Interface
 
 
 | Operation        | Description                                         |
 | ---------------- | --------------------------------------------------- |
-| `create()`       | Create a new stack                                  |
-| `enqueue(value)`? | Store a new value at the end of the queue           |
-| `peek()`?         | Check the value at the front of the queue           |
-| `dequeue()`?      | Return the front value and remove it from the queue |
+| `create()`       | Create a new priority queue                         |
+| `is_empty()`     | Test whether the priority queue is empty            |
+| `add(value)`     | Store a new value in the priority queue             |
+| `peek()`         | Check the value at the front of the priority queue  |
+| `poll()`         | Return the front value and remove it from the queue |
 
 
 ## Implementations

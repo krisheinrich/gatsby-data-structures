@@ -65,6 +65,10 @@ export default class MDXRuntimeTest extends Component {
         }
       });
 
+    if (!mdx) {
+      return <div />;
+    }
+
     // meta tags
     const metaTitle = mdx.frontmatter.metaTitle;
 

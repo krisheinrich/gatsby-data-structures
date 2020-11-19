@@ -41,11 +41,26 @@ export const baseStyles = injectGlobal`
   a {
     transition: color 0.15s;
     /* color: #663399; */
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
   }
 
   body {
     font-family: 'Roboto';
   }
+
+  /* Custom styles */
+  .nowrap {
+    white-space: nowrap;
+  }
+  figcaption {
+    font-style: italic;
+    text-align: center;
+    padding: 18px;
+  }
+
   .visibleMobile {
     display: none;
   }
@@ -55,12 +70,6 @@ export const baseStyles = injectGlobal`
   .video-responsive {
     position: relative;
     padding-bottom: 56.2%;
-  }
-  a {
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: none;
   }
   .displayInline {
     display: inline-block;

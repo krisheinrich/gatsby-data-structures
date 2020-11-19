@@ -4,6 +4,7 @@ const config = require("./config");
 const plugins = [
   'gatsby-plugin-sitemap',
   'gatsby-plugin-sharp',
+  'gatsby-remark-images',
   {
     resolve: `gatsby-plugin-layout`,
     options: {
@@ -36,6 +37,13 @@ const plugins = [
       ],
       extensions: [".mdx", ".md"]
     }
+  },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: "images",
+      path: `${__dirname}/src/components/images`,
+    },
   },
   {
     resolve: `gatsby-plugin-gtag`,
